@@ -11,6 +11,7 @@ class Solution:
         cur = head
         while cur != None:
             tmp = cur.next
+            cur.next = pre
             pre = cur
             cur = tmp
 

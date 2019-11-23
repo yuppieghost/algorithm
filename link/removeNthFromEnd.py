@@ -10,14 +10,13 @@ class Solution:
         dummy.next = head
         length = 0
         cur = head
-        while cur:
-            length+=1
+        while cur :
             cur = cur.next
-        length -= n
+            length +=1
+        length = length - n 
         cur = dummy
         while length > 0:
-            length -= 1
             cur = cur.next
+            length -= 1
         cur.next = cur.next.next
         return dummy.next
-        

@@ -28,6 +28,8 @@ class Stack:
         if self.is_empty():
             print("stack is empty")
         else:
+            # since python support negative index ,so we do not need the top pointer
+            # this is different with other languages
             return self.data[-1]
 
 
@@ -59,4 +61,3 @@ class LinkStack:
             tmp = self.top
             self.top = self.top.next
             return tmp.val
-

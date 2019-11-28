@@ -16,14 +16,12 @@ assert bubble([9, 2, 5, 5, 2, 32, 8]) == [2, 2, 5, 5, 8, 9, 32]
 
 
 def insert(arr):
-    n = len(arr)
-    for i in range(1, n):
+    for i in range(1, len(arr)):
         k = arr[i]
         j = i - 1
         while j >= 0 and k < arr[j]:
             arr[j + 1] = arr[j]
             j -= 1
-        # 上一步 j 已经减去1, 并且找到了坑, 所以下面会在 j + 1 的位置
         arr[j + 1] = k
     return arr
 
@@ -32,13 +30,13 @@ assert insert([9, 2, 5, 5, 2, 32, 8]) == [2, 2, 5, 5, 8, 9, 32]
 
 
 def select(arr):
-    n = len(arr)
-    for i in range(n):
+    for i in range(len(arr)):
         minid = i
-        for j in range(i, n):
+        for j in range(i, len(arr)):
             if arr[j] < arr[minid]:
                 minid = j
         arr[i], arr[minid] = arr[minid], arr[i]
     return arr
+
 
 assert select([9, 2, 5, 5, 2, 32, 8]) == [2, 2, 5, 5, 8, 9, 32]

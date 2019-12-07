@@ -12,9 +12,10 @@ def bubble(l: list):
     return l
 
 
-assert bubble([9, 2, 5, 5, 2, 32, 8]) == [2, 2, 5, 5, 8, 9, 32]
+import pysnooper
 
 
+# @pysnooper.snoop()
 def insert(arr):
     for i in range(1, len(arr)):
         k = arr[i]
@@ -26,17 +27,17 @@ def insert(arr):
     return arr
 
 
-assert insert([9, 2, 5, 5, 2, 32, 8]) == [2, 2, 5, 5, 8, 9, 32]
-
-
 def select(arr):
     for i in range(len(arr)):
         minid = i
-        for j in range(i, len(arr)):
+        for j in range(i + 1, len(arr)):
             if arr[j] < arr[minid]:
                 minid = j
         arr[i], arr[minid] = arr[minid], arr[i]
     return arr
 
 
-assert select([9, 2, 5, 5, 2, 32, 8]) == [2, 2, 5, 5, 8, 9, 32]
+if __name__ == '__main__':
+    # assert insert([9, 2, 5, 5, 2, 32, 8]) == [2, 2, 5, 5, 8, 9, 32]
+    assert select([9, 2, 5, 5, 2, 32, 8]) == [2, 2, 5, 5, 8, 9, 32]
+    # assert bubble([9, 2, 5, 5, 2, 32, 8]) == [2, 2, 5, 5, 8, 9, 32]

@@ -5,16 +5,16 @@ import pysnooper
 # using bucket sort
 def insertionSort(b):
     for i in range(1, len(b)):
-        up = b[i]
+        k = b[i]
         j = i - 1
-        while j >= 0 and b[j] > up:
+        while j >= 0 and b[j] > k:
             b[j + 1] = b[j]
             j -= 1
-        b[j + 1] = up
+        b[j + 1] = k
     return b
 
 
-@pysnooper.snoop()
+# @pysnooper.snoop()
 def bucketSort(x):
     arr = []
     slot_num = 10  # 10 means 10 slots, each
@@ -40,11 +40,13 @@ def bucketSort(x):
     return x
 
 
-# Driver Code
-x = [0.897, 0.565, 0.656,
-     0.1234, 0.665, 0.3434]
-print("Sorted Array is")
-print(bucketSort(x))
+if __name__ == '__main__':
 
-# This code is contributed by
-# Oneil Hsiao
+    # Driver Code
+    x = [0.897, 0.565, 0.656,
+         0.1234, 0.665, 0.3434]
+    print("Sorted Array is")
+    print(bucketSort(x))
+
+    # This code is contributed by
+    # Oneil Hsiao

@@ -19,18 +19,32 @@ def create_linkList(n):
 n = 2009  # 总的个数
 m = 3  # 数的数目
 # last 634
-if m == 1:  # 如果是1的话，特殊处理，直接输出
+
+if m == 1:
     print(n)
 else:
     head = create_linkList(n)
-    pre = None
+    # pre = None
     cur = head
-    while cur.next != cur:  # 终止条件是节点的下一个节点指向本身
-        for i in range(m - 1):
-            pre = cur
+    while cur.next != cur:
+        for i in range(m-1):
             cur = cur.next
-        print(cur.value)
-        pre.next = cur.next
-        cur = cur.next
-    print("final", cur.value)
-
+        cur.next = cur.next.next
+    print(cur.value-1)
+#
+#
+#
+# if m == 1:  # 如果是1的话，特殊处理，直接输出
+#     print(n)
+# else:
+#     head = create_linkList(n)
+#     pre = None
+#     cur = head
+#     while cur.next != cur:  # 终止条件是节点的下一个节点指向本身
+#         for i in range(m - 1):
+#             pre = cur
+#             cur = cur.next
+#         print(cur.value)
+#         pre.next = cur.next
+#         cur = cur.next
+#     print("final", cur.value)

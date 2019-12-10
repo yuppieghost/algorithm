@@ -63,6 +63,7 @@ def partition(arr, low, high):
 
 
 def quickSort(arr, low, high):
+    # 为什么没有等于: 递归里面存在pi-1,pi+1,等于的话逻辑无法满足
     if low < high:
         # pi is partitioning index, arr[pi] is now
         # at right place

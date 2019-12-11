@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 from trie_ import Node, Trie
-from queue import Queue
+from pending.queue import Queue
 
 
 class ACNode(Node):

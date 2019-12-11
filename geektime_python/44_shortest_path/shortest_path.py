@@ -5,7 +5,7 @@
 """
 
 from dataclasses import dataclass
-from queue import PriorityQueue
+from pending.queue import PriorityQueue
 
 @dataclass
 class Edge:

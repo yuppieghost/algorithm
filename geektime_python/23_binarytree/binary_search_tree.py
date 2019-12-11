@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-from queue import Queue
+from pending.queue import Queue
 import math
 
 

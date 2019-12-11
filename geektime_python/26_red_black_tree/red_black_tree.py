@@ -1,9 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-from queue import Queue
+from pending.queue import Queue
 import pygraphviz as pgv
-import random
 
 OUTPUT_PATH = 'E:/'
 

@@ -78,7 +78,7 @@ if __name__ == "__main__":
     graph.add_edge(5, 7)
     graph.add_edge(6, 7)
 
-    # graph.bfs(0, 7)
+    graph.bfs(0, 7)
     graph.dfs(0, 7)
 # 0->1->2->5->7
 # 0->1->2->5->4->6->7

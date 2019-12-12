@@ -1,29 +1,14 @@
-import pysnooper
-
-@pysnooper.snoop()
-class Solution:
-    def trap(self, height) -> int:
-        res = 0
-        n = len(height)
-        left = 0
-        right = n - 1
-        maxleft = maxright = 0
-        while left <= right:
-            if height[left] <= height[right]:
-                if height[left] >= maxleft:
-                    maxleft = height[left]
-                else:
-                    res += maxleft - height[left]
-                left += 1
-            else:
-                if height[right] >= maxright:
-                    maxright = height[right]
-                else:
-                    res += maxright - height[right]
-                right -= 1
-        return res
+def insert(arr):
+    for i in range(1, len(arr)):
+        k = arr[i]
+        j = i - 1
+        while k >= 0 and arr[j] > k:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = k
 
 
-l = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
-s = Solution()
-print(s.trap(l))
+if __name__ == '__main__':
+    l = [1, 3, 2, 8, 5, 5]
+    insert(l)
+    print(l)

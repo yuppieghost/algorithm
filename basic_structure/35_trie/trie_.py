@@ -82,7 +82,7 @@ class Node:
 
     def __repr__(self):
         return 'node value: {}'.format(self.data) + '\n' \
-               + 'children:{}'.format([n.data for n in self.children])
+              + 'children:{}'.format([n.data for n in self.children])
 
 
 class Trie:

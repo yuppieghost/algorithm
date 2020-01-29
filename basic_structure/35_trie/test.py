@@ -11,16 +11,15 @@ class Trie:
     def __init__(self):
         self.root = TrieNode()
 
-    def insert(self, text: str) -> None:
+    def insert(self, word):
         node = self.root
-        for w in text:
-            # defaultdict usage here
+        for w in word:
             node = node.children[w]
         node.is_word = True
 
-    def find(self, pattern) -> bool:
+    def find(self, word):
         node = self.root
-        for w in pattern:
+        for w in word:
             node = node.children.get(w)
             if not node:
                 return False

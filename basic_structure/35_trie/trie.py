@@ -27,6 +27,7 @@ class Trie:
         return node.is_word
 
 
+
 if __name__ == "__main__":
     strs = ["how", "hi", "her", "hello", "so", "see"]
     trie = Trie()

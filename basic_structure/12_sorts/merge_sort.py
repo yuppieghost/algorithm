@@ -31,8 +31,8 @@ def _merge(a: List[int], low: int, mid: int, high: int):
             j += 1
     start = i if i <= mid else j
     end = mid if i <= mid else high
-    tmp.extend(a[start:end + 1])
-    a[low:high + 1] = tmp
+    tmp += a[start : end + 1]
+    a[low : high + 1] = tmp
 
 
 def test_merge_sort():

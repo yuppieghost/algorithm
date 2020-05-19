@@ -3,15 +3,16 @@
 using namespace std;
 
 const int N = 100010;
+
 int n;
 int a[N], s[N];
 
 int main()
 {
   cin >> n;
-  int res = 0;
   for (int i = 0; i < n; i++)
-    scanf("%d", &a[i]);
+    cin >> a[i];
+  int res = 0;
   for (int i = 0, j = 0; i < n; i++)
   {
     s[a[i]]++;
@@ -23,5 +24,4 @@ int main()
     res = max(res, i - j + 1);
   }
   cout << res << endl;
-  return 0;
 }

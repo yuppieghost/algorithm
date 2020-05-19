@@ -1,5 +1,5 @@
 #include <iostream>
-typedef long long LL;
+typedef long long LL; // 100000个逆序对数量最大值为99999！大于int 65535
 using namespace std;
 const int N = 1e6 + 10;
 int arr[N], t[N];
@@ -9,12 +9,12 @@ LL merge_sort(int l, int r)
   if (l >= r)
     return 0;
   int mid = l + r >> 1;
-  int ret = merge_sort(l, mid) + merge_sort(mid + 1, r);
+  LL ret = merge_sort(l, mid) + merge_sort(mid + 1, r);
 
   int k = 0, i = l, j = mid + 1;
   while (i <= mid && j <= r)
   {
-    if (arr[i] <= arr[j])
+    if (arr[i] <= arr[j]) // 注意这里必须等于，
       t[k++] = arr[i++];
     else
     {

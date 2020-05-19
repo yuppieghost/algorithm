@@ -30,32 +30,50 @@ def _partition(a: List[int], low: int, high: int):
     a[low], a[j] = a[j], a[low]
     return j
 
+def partition(arr, low, high):
+    i = low - 1
+    pivot = arr[high]
+    for j in range(low, high):
+        if arr[j] < pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
 
+def quickSort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        quickSort(arr, low ,pi - 1)
+        quickSort(arr, pi + 1, high)
+
+    
 def test_quick_sort():
     a1 = [3, 5, 6, 7, 8]
-    quick_sort(a1)
+    quickSort(a1, 0, len(a1) - 1)
     assert a1 == [3, 5, 6, 7, 8]
     a2 = [2, 2, 2, 2]
-    quick_sort(a2)
+    quickSort(a2, 0, len(a2) - 1)
     assert a2 == [2, 2, 2, 2]
     a3 = [4, 3, 2, 1]
-    quick_sort(a3)
+    quickSort(a3, 0 , len(a3) - 1)
     assert a3 == [1, 2, 3, 4]
     a4 = [5, -1, 9, 3, 7, 8, 3, -2, 9]
-    quick_sort(a4)
+    quickSort(a4, 0, len(a4) - 1)
     assert a4 == [-2, -1, 3, 3, 5, 7, 8, 9, 9]
 
 
 if __name__ == "__main__":
-    a1 = [3, 5, 6, 7, 8]
-    a2 = [2, 2, 2, 2]
-    a3 = [4, 3, 2, 1]
-    a4 = [5, -1, 9, 3, 7, 8, 3, -2, 9]
-    quick_sort(a1)
-    print(a1)
-    quick_sort(a2)
-    print(a2)
-    quick_sort(a3)
-    print(a3)
-    quick_sort(a4)
-    print(a4)
+    # a1 = [3, 5, 6, 7, 8]
+    # a2 = [2, 2, 2, 2]
+    # a3 = [4, 3, 2, 1]
+    # a4 = [5, -1, 9, 3, 7, 8, 3, -2, 9]
+    # quick_sort(a1)
+    # print(a1)
+    # quick_sort(a2)
+    # print(a2)
+    # quick_sort(a3)
+    # print(a3)
+    # quick_sort(a4)
+    # print(a4)
+
+    test_quick_sort()
